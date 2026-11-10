@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Сборщик 3D-моделей</title>
+    <style>
+      body { margin: 0; background: #2a2622; color: #eee; font: 14px sans-serif; overflow: hidden; }
+      #status { position: fixed; top: 10px; left: 10px; padding: 6px 10px; background: rgba(0, 0, 0, 0.6); }
+      #models { position: fixed; bottom: 10px; left: 10px; }
+      #models a { color: #c9a45c; margin-right: 12px; }
+    </style>
+  </head>
+  <body>
+    <div id="status">Собираю модель…</div>
+    <div id="models"></div>
+    <script type="module" src="./builder.js"></script>
+  </body>
+</html>

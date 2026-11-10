@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Музей вычислительной техники">
+  <!-- Логотип: фасад музея (портик), колонны которого похожи на ножки микросхемы -->
+  <g fill="#c9a45c">
+    <!-- Фронтон с точкой-«ключом», как у метки первой ножки на микросхеме -->
+    <path d="M32 6 L60 25 H4 Z M32 12.5 L15.5 21.5 H48.5 Z" fill-rule="evenodd" />
+    <circle cx="32" cy="18" r="2.4" />
+    <!-- Архитрав -->
+    <rect x="5" y="27.5" width="54" height="4" rx="1" />
+    <!-- Пять колонн-ножек: капитель, ствол, база -->
+    <g id="column">
+      <rect x="7" y="33.5" width="8" height="2.5" rx="0.6" />
+      <rect x="9" y="36" width="4" height="14" />
+      <rect x="7" y="50" width="8" height="2.5" rx="0.6" />
+    </g>
+    <use href="#column" x="10.5" />
+    <use href="#column" x="21" />
+    <use href="#column" x="31.5" />
+    <use href="#column" x="42" />
+    <!-- Ступени основания -->
+    <rect x="3" y="54" width="58" height="4" rx="1" />
+  </g>
+</svg>
