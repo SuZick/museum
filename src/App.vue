@@ -15,5 +15,5 @@ const logo = import.meta.env.BASE_URL + 'logo.svg'
   <!-- Сюда Vue Router подставляет нужную страницу: главную или страницу экспоната -->
   <RouterView />
 
-  <footer class="site-footer">Учебный проект · 2026</footer>
+  <footer class="site-footer">Учебный проект, 2026</footer>
 </template>

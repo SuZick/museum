@@ -51,7 +51,7 @@ const modelUrl = computed(
     ></model-viewer>
 
     <p v-if="!model" class="viewer-note">3D-модель готовится</p>
-    <p class="viewer-hint viewer-hint--mouse">Вращайте мышью · колесо — приблизить</p>
-    <p class="viewer-hint viewer-hint--touch">Вращайте пальцем · двумя пальцами — приблизить</p>
+    <p class="viewer-hint viewer-hint--mouse">Крутите мышкой, колёсико - приблизить</p>
+    <p class="viewer-hint viewer-hint--touch">Крутите пальцем, двумя пальцами - приблизить</p>
   </div>
 </template>

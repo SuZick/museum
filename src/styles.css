@@ -1,47 +1,37 @@
-/* =========================================================
-   Оформление сайта в стиле классического музея:
-   тёмные залы, тёплый свет, золотые акценты, шрифты с засечками.
-   Сначала стили для телефона, ниже (@media) — для компьютера.
-   ========================================================= */
+/* Стили сайта. Сначала для телефона, ниже (@media) - для компьютера. */
 
-/* ---------- Цвета и размеры (меняются в одном месте) ---------- */
+/* Цвета */
 :root {
-  --bg: #14110f; /* фон — тёмный зал */
-  --bg-raised: #1c1814; /* чуть светлее — для выделенных блоков */
-  --text: #ece4d6; /* основной текст — цвет слоновой кости */
-  --text-muted: #a99f8f; /* второстепенный текст */
-  --gold: #c9a45c; /* акцент — латунь музейных табличек */
-  --line: rgba(201, 164, 92, 0.22); /* тонкие разделительные линии */
-
-  --font-title: 'Playfair Display', Georgia, serif;
-  --font-text: 'PT Serif', Georgia, serif;
+  --cream: #f1ebe1; /* фон страницы */
+  --beige: #dfccb1; /* шапка, блоки */
+  --beige-2: #d8c8b5; /* линии, подвал */
+  --sage: #98a086; /* фон окна с моделью */
+  --rose: #a76d5e; /* ссылки, номера */
+  --brown: #846044; /* заголовки */
+  --text: #3f2e22; /* основной текст (тёмный оттенок коричневого) */
+  --text-light: #6e5a4b; /* второстепенный текст */
 
   --header-height: 56px;
 }
 
-/* ---------- Общие правила ---------- */
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: var(--cream);
   color: var(--text);
-  font-family: var(--font-text);
-  font-size: 17px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 h1,
 h2 {
-  font-family: var(--font-title);
-  font-weight: 500;
-  line-height: 1.2;
   margin: 0;
+  color: var(--brown);
+  line-height: 1.25;
 }
 
 a {
@@ -49,35 +39,16 @@ a {
   text-decoration: none;
 }
 
-/* Маленькая надпись капителью над заголовком — как на музейной табличке */
-.eyebrow {
-  margin: 0 0 12px;
-  color: var(--gold);
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-/* Короткая золотая черта под заголовком */
-.rule {
-  width: 64px;
-  height: 1px;
-  margin: 24px 0;
-  background: var(--gold);
-}
-
 .back-link {
   display: inline-block;
-  margin-bottom: 28px;
-  color: var(--text-muted);
-  font-size: 15px;
-  transition: color 0.2s;
+  margin-bottom: 20px;
+  color: var(--rose);
 }
 .back-link:hover {
-  color: var(--gold);
+  text-decoration: underline;
 }
 
-/* ---------- Шапка и подвал ---------- */
+/* Шапка и подвал */
 .site-header {
   position: sticky;
   top: 0;
@@ -85,85 +56,80 @@ a {
   display: flex;
   align-items: center;
   height: var(--header-height);
-  padding: 0 20px;
-  background: rgba(20, 17, 15, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
+  padding: 0 16px;
+  background: var(--beige);
+  border-bottom: 3px solid var(--sage);
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-title);
-  font-size: 17px;
-  letter-spacing: 0.02em;
+  color: var(--brown);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+@media (min-width: 600px) {
+  .brand {
+    font-size: 18px;
+  }
 }
 
 .brand-logo {
-  width: 26px;
-  height: 26px;
-}
-
-.hero-logo {
-  display: block;
-  width: 72px;
-  height: 72px;
-  margin-bottom: 24px;
+  width: 28px;
+  height: 28px;
 }
 
 .site-footer {
-  padding: 32px 20px;
-  border-top: 1px solid var(--line);
-  color: var(--text-muted);
+  padding: 24px 16px;
+  background: var(--beige-2);
+  color: var(--text-light);
   font-size: 14px;
   text-align: center;
 }
 
-/* ---------- Главная ---------- */
+/* Главная */
 .home {
-  max-width: 880px;
+  max-width: 860px;
   margin: 0 auto;
-  padding: 0 20px 64px;
+  padding: 0 16px 48px;
 }
 
 .hero {
-  padding: 48px 0 24px;
+  padding: 32px 0 8px;
 }
 
 .hero h1 {
-  font-size: 2.3rem;
+  font-size: 28px;
 }
 
 .lead {
-  max-width: 34em;
-  margin: 0;
-  color: var(--text-muted);
-  font-size: 1.1rem;
+  max-width: 36em;
+  margin: 12px 0 0;
+  font-size: 17px;
 }
 
 .era {
-  margin-top: 48px;
+  margin-top: 36px;
 }
 
 .era-header {
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--gold);
+  padding: 10px 14px;
+  background: var(--beige);
+  border-radius: 8px;
 }
 
 .era-period {
-  margin: 0 0 4px;
-  color: var(--gold);
+  margin: 0;
+  color: var(--text-light);
   font-size: 14px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .era-header h2 {
-  font-size: 1.6rem;
+  font-size: 22px;
 }
 
-/* Список экспонатов — как страница музейного каталога */
 .catalog {
   margin: 0;
   padding: 0;
@@ -172,65 +138,68 @@ a {
 
 .catalog-item {
   display: grid;
-  grid-template-columns: 52px 1fr;
+  grid-template-columns: 46px 1fr;
   column-gap: 8px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--line);
-  transition: background 0.2s;
+  padding: 12px 6px;
+  border-bottom: 1px solid var(--beige-2);
 }
 
 .catalog-number {
   grid-row: span 2;
-  padding-top: 3px;
-  color: var(--gold);
-  font-size: 14px;
-  font-variant-numeric: tabular-nums;
+  color: var(--rose);
+  font-weight: bold;
 }
 
 .catalog-name {
-  font-family: var(--font-title);
-  font-size: 1.15rem;
-  transition: color 0.2s;
+  color: var(--brown);
+  font-size: 17px;
+  font-weight: bold;
 }
 
 .catalog-meta {
-  color: var(--text-muted);
-  font-size: 15px;
+  color: var(--text-light);
+  font-size: 14px;
 }
 
 .catalog-item:hover .catalog-name {
-  color: var(--gold);
+  color: var(--rose);
+  text-decoration: underline;
 }
 
-/* ---------- Страница экспоната (телефон: модель сверху, текст снизу) ---------- */
+/* Страница экспоната (телефон: модель сверху, текст снизу) */
 .exhibit-stage {
-  height: 56vh;
+  height: 55vh;
   min-height: 300px;
   max-height: 560px;
 }
 
 .exhibit-info {
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 28px 20px 64px;
+  padding: 20px 16px 48px;
 }
 
 .exhibit-info h1 {
-  font-size: 2rem;
+  font-size: 28px;
 }
 
 .exhibit-subtitle {
-  margin: 8px 0 0;
-  color: var(--text-muted);
+  margin: 6px 0 0;
+  color: var(--text-light);
+}
+
+.exhibit-lead {
+  margin: 18px 0 0;
+  font-size: 17px;
 }
 
 .exhibit-section {
-  margin-top: 36px;
+  margin-top: 28px;
 }
 
 .exhibit-section h2 {
-  margin-bottom: 14px;
-  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-size: 21px;
 }
 
 .exhibit-section p {
@@ -245,129 +214,111 @@ a {
 
 .specs th,
 .specs td {
-  padding: 10px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 8px 6px;
+  border: 1px solid var(--beige-2);
   text-align: left;
   vertical-align: top;
 }
 
 .specs th {
-  width: 45%;
-  padding-right: 16px;
-  color: var(--text-muted);
-  font-weight: 400;
+  width: 42%;
+  background: var(--beige);
+  font-weight: normal;
 }
 
 .placeholder {
-  color: var(--text-muted);
+  color: var(--text-light);
   font-style: italic;
 }
 
-/* Вступление крупнее основного текста */
-.exhibit-lead {
-  margin: 0;
-  font-size: 1.12rem;
-  line-height: 1.6;
-}
-
-/* «Интересный факт» — как музейная табличка с латунной полосой слева */
+/* Блок «Интересно» */
 .exhibit-fact {
-  margin-top: 36px;
-  padding: 18px 20px;
-  background: var(--bg-raised);
-  border-left: 3px solid var(--gold);
+  margin-top: 28px;
+  padding: 14px 16px;
+  background: var(--beige);
+  border-left: 4px solid var(--rose);
+  border-radius: 4px;
 }
-.exhibit-fact .eyebrow {
-  margin-bottom: 8px;
-}
-.exhibit-fact p:last-child {
+.exhibit-fact p {
   margin: 0;
 }
+.fact-title {
+  color: var(--rose);
+  font-weight: bold;
+}
 
-/* Источники — мелким шрифтом в конце */
+/* Источники */
 .exhibit-sources {
-  margin-top: 36px;
-  color: var(--text-muted);
+  margin-top: 28px;
   font-size: 14px;
 }
 .exhibit-sources h2 {
-  margin-bottom: 10px;
-  color: var(--text);
-  font-size: 1.05rem;
+  margin-bottom: 8px;
+  font-size: 18px;
 }
 .exhibit-sources ol {
   margin: 0;
   padding-left: 20px;
 }
 .exhibit-sources li {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .exhibit-sources a {
-  border-bottom: 1px solid var(--line);
-  transition: color 0.2s;
-}
-.exhibit-sources a:hover {
-  color: var(--gold);
+  color: var(--rose);
+  text-decoration: underline;
 }
 
 .not-found {
-  padding: 80px 20px;
+  padding: 60px 16px;
   text-align: center;
 }
 .not-found h1 {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
-/* ---------- Окно 3D-модели ---------- */
+/* Окно 3D-модели */
 .viewer {
   position: relative;
   width: 100%;
   height: 100%;
-  /* Свет прожектора сверху и тёмный пол — как витрина в зале */
-  background:
-    radial-gradient(ellipse 60% 55% at 50% 0%, rgba(255, 231, 190, 0.16), transparent 70%),
-    radial-gradient(ellipse 80% 40% at 50% 100%, #2b241d, transparent 75%),
-    var(--bg);
-  border-bottom: 1px solid var(--line);
+  background: radial-gradient(circle at 50% 40%, #b6bca6, var(--sage));
 }
 
 .viewer model-viewer {
   width: 100%;
-  height: calc(100% - 40px); /* внизу оставляем место под подсказку, чтобы она не закрывала модель */
+  height: calc(100% - 36px);
   --poster-color: transparent;
-  --progress-bar-color: var(--gold);
+  --progress-bar-color: var(--rose);
 }
 
 .viewer-note {
   position: absolute;
-  top: 18px;
+  top: 14px;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
-  padding: 6px 14px;
-  border: 1px solid var(--line);
-  background: rgba(20, 17, 15, 0.7);
-  color: var(--gold);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  padding: 4px 12px;
+  background: var(--cream);
+  border-radius: 12px;
+  color: var(--brown);
+  font-size: 13px;
   white-space: nowrap;
   pointer-events: none;
 }
 
 .viewer-hint {
   position: absolute;
-  bottom: 12px;
+  bottom: 10px;
   left: 0;
   right: 0;
   margin: 0;
-  color: var(--text-muted);
+  color: #2f3326;
   font-size: 13px;
   text-align: center;
   pointer-events: none;
 }
 
-/* Подсказку «мышью» показываем только там, где есть мышь, «пальцем» — на сенсорных экранах */
+/* Подсказку «мышкой» показываем там, где есть мышь, «пальцем» - на сенсорных экранах */
 .viewer-hint--mouse {
   display: none;
 }
@@ -380,18 +331,14 @@ a {
   }
 }
 
-/* ---------- Компьютер: модель слева (2/3), текст справа (1/3) ---------- */
+/* Компьютер: модель слева (2/3), текст справа (1/3) */
 @media (min-width: 960px) {
   .site-header {
-    padding: 0 40px;
-  }
-
-  .hero {
-    padding: 88px 0 32px;
+    padding: 0 32px;
   }
 
   .hero h1 {
-    font-size: 3.4rem;
+    font-size: 36px;
   }
 
   .exhibit {
@@ -400,7 +347,7 @@ a {
     align-items: start;
   }
 
-  /* Модель «прилипает» к экрану, пока посетитель читает текст справа */
+  /* Модель остаётся на месте, пока читаешь текст справа */
   .exhibit-stage {
     position: sticky;
     top: var(--header-height);
@@ -408,19 +355,10 @@ a {
     max-height: none;
   }
 
-  .exhibit-stage .viewer {
-    border-bottom: none;
-  }
-
   .exhibit-info {
     max-width: none;
     margin: 0;
-    padding: 40px 40px 80px;
+    padding: 28px 28px 60px;
     min-height: calc(100vh - var(--header-height));
-    border-left: 1px solid var(--line);
-  }
-
-  .exhibit-info h1 {
-    font-size: 2.4rem;
   }
 }

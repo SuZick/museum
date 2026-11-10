@@ -18,18 +18,16 @@ const era = computed(() => eras.find((e) => e.id === exhibit.value?.era))
     </div>
 
     <article class="exhibit-info">
-      <RouterLink to="/" class="back-link">← Все экспонаты</RouterLink>
+      <RouterLink to="/" class="back-link">← Назад к списку</RouterLink>
 
-      <p class="eyebrow">{{ catalogNumber(exhibit) }} · {{ era.title }}</p>
       <h1>{{ exhibit.name }}</h1>
-      <p class="exhibit-subtitle">{{ exhibit.type }}, {{ exhibit.year }}</p>
-      <div class="rule"></div>
+      <p class="exhibit-subtitle">Экспонат {{ catalogNumber(exhibit) }}. {{ era.title }}</p>
 
       <!-- Вступление: коротко, что это за экспонат -->
       <p v-if="exhibit.summary" class="exhibit-lead">{{ exhibit.summary }}</p>
 
       <section class="exhibit-section">
-        <h2>Паспорт экспоната</h2>
+        <h2>Характеристики</h2>
         <table class="specs">
           <tbody>
             <tr>
@@ -59,10 +57,9 @@ const era = computed(() => eras.find((e) => e.id === exhibit.value?.era))
         <p class="placeholder">Описание экспоната готовится.</p>
       </section>
 
-      <!-- Интересный факт — выделен как музейная табличка -->
+      <!-- Интересный факт -->
       <aside v-if="exhibit.fact" class="exhibit-fact">
-        <p class="eyebrow">Интересный факт</p>
-        <p>{{ exhibit.fact }}</p>
+        <p><span class="fact-title">Интересно:</span> {{ exhibit.fact }}</p>
       </aside>
 
       <section v-if="exhibit.sources?.length" class="exhibit-sources">
@@ -78,6 +75,6 @@ const era = computed(() => eras.find((e) => e.id === exhibit.value?.era))
 
   <main v-else class="not-found">
     <h1>Экспонат не найден</h1>
-    <RouterLink to="/" class="back-link">← Вернуться к списку экспонатов</RouterLink>
+    <RouterLink to="/" class="back-link">← Назад к списку</RouterLink>
   </main>
 </template>
