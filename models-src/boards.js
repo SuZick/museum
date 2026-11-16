@@ -92,12 +92,16 @@ function random(seed) {
   }
 }
 
-// Рисунок текстолита: зелёная основа, медные дорожки, переходные отверстия, белые надписи
-function drawPcb(ctx, w, h, seed, labels, widthMeters) {
+// Цвета текстолита по умолчанию (материнские платы): тёмно-зелёная основа и медные дорожки
+export const PCB_GREEN = { base: '#56692e', traces: 'rgba(196, 170, 92, 0.55)' }
+
+// Рисунок текстолита: основа, дорожки, переходные отверстия, белые надписи.
+// colors — цвета основы и дорожек (у видеокарт бывают синие, красные, светло-зелёные платы)
+export function drawPcb(ctx, w, h, seed, labels, widthMeters, colors = PCB_GREEN) {
   const rnd = random(seed)
-  ctx.fillStyle = '#56692e'
+  ctx.fillStyle = colors.base
   ctx.fillRect(0, 0, w, h)
-  ctx.strokeStyle = 'rgba(196, 170, 92, 0.55)'
+  ctx.strokeStyle = colors.traces
   ctx.lineWidth = Math.max(1, w / 400)
   for (let i = 0; i < 260; i++) {
     let x = rnd() * w
